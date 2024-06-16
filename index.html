@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="./index.js" defer></script>
+  <title>Newsletter sign-up form </title>
+
+  
+</head>
+<body>
+  <main>
+    <div class="container">
+      <section id="newsletter">
+        <div class="image">
+          <picture>
+            <source srcset="./assets/images/desktop.svg" media="(min-width: 768px)">
+            <img src="./assets/images/mobile.svg" alt="Responsive image">
+        </picture>
+        </div>
+        <div class="content">
+          <div class="text py-1">
+            <h1>Stay updated!</h1>
+            <p> Join 60,000+ product managers receiving monthly updates on:</p>
+            <ul class="list py-1">
+              <li> <img src="./assets/images/icon-list.svg" alt="icon-list"> <span>Product discovery and building what matters</span></li>
+              <li><img src="./assets/images/icon-list.svg" alt="icon-list"> <span>Measuring to ensure updates are a success</span></li>
+              <li><img src="./assets/images/icon-list.svg" alt="icon-list"> <span>And much more!</span></li>
+            </ul>
+          </div>
+          <form action="./success.html" class="newsletter-form py-1" id="newsletter-form">
+            <div class="form-group">
+             <div>
+              <label for="email">Email address</label>
+              <label id="error"></label>
+             </div>
+              <input type="email" name="email" placeholder="email@company.com" class="email" id="email">
+              <button type="submit" class="btn btn-submit">Subscribe to monthly newsletter</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
