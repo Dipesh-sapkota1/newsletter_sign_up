@@ -1,21 +1,31 @@
-const form = document.getElementById('newsletter-form');
-const error = document.getElementById('error');
-const email = document.querySelector('.email');
+const form = document.getElementById('form');
+const emailInput = document.getElementById('email');
+const emailError = document.getElementById('emailError');
+form.noValidate = true;
 
-function handleForm(e) {
-    e.preventDefault();
-    const data = e.target.email.value;
-    if(!data) {
-        if(data.indexOf('@') !== -1) {
-            error.innerText = 'Input email field';
-            email.classList.add('error');
-            
-        }
-        else{
-            error.innerText = '';
-            email.classList.remove('error');
-        }
-    }
+function handleSubmit(e) {
+  e.preventDefault();
+
+  const emailValue = emailInput.value;
+
+  if (!emailValue) {
+    emailError.innerHTML = '<strong>Please enter an email adderss</strong>';
+  } else if (emailInput.validity.typeMismatch) {
+    emailError.innerHTML = '<strong>Valid email required</strong>';
+  } else {
+    this.submit();
+  }
 }
 
-form.addEventListener('submit', handleForm);
+form.addEventListener('submit', handleSubmit);
+emailInput.addEventListener('input', validateEmail);
+
+function validateEmail(e) {
+  const isValid = e.target.validity.typeMismatch;
+
+  if (isValid) {
+    emailError.innerHTML = '<strong>Valid email required</strong>';
+  } else {
+    emailError.innerHTML = '';
+  }
+}
