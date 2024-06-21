@@ -4,7 +4,6 @@
   @media (min-width: 375px) {
     .container {
       max-width: 375px;
-      padding-inline: 1rem;
       min-height: 100vh;
       display: grid;
       place-content: center;
@@ -25,7 +24,7 @@
   @media (min-width: 640px) {
     .container {
       max-width: 640px;
-      padding-inline: 0rem;
+ 
     }
     #newsletter{
         display: flex;
